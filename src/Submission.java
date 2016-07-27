@@ -23,7 +23,6 @@ public class Submission {
     public String getDeadline() { return this.deadline; }
 
     public long getTimeliness(){
-
         return Utils.differenceBetweenDatesInHours(deadline, timestamp);
     }
 }

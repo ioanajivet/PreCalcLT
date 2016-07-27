@@ -18,6 +18,7 @@ public class UserMetricComputation {
     private HashMap<Integer, List<ForumSession>> forumSessions;
     private HashMap<Integer, List<QuizSession>> quizSessions;
     private HashMap<Integer, List<Submission>> quizSubmissions;
+    private HashMap<Integer, Integer> collaborations;
 
     public UserMetricComputation(String id) {
         this.id =  id;
@@ -27,6 +28,7 @@ public class UserMetricComputation {
         forumSessions = new HashMap<>();
         quizSessions = new HashMap<>();
         quizSubmissions = new HashMap<>();
+        collaborations = new HashMap<>();
 
     }
 
@@ -86,6 +88,12 @@ public class UserMetricComputation {
         videoSessionList.add(videoSession);
     }
 
+    public void addCollaboration(int week) {
+        if(collaborations.containsKey(week))
+            collaborations.put(week, collaborations.get(week) + 1);
+        else
+            collaborations.put(week, 1);
+    }
 
     //Metric 1: Sessions per week
     public int getSessionsPerWeek(int week) {
@@ -298,6 +306,17 @@ public class UserMetricComputation {
 
         return revisited;
 
+    }
+
+    //Metric 13: # activities in the forum
+    public int getForumActivity(int week){
+        int collabs = 0;
+
+        for(int i = 1; i <= week; i++)
+            if(collaborations.containsKey(i))
+                collabs += collaborations.get(i);
+
+        return collabs;
     }
 
     public String getId() { return this.id; }

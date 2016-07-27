@@ -22,7 +22,7 @@ public class Sitting {
     }
 
     public static void computeSittings(String learner_file, String dataPath) throws IOException, ParseException {
-        String curatedDataPath = dataPath + "learning_activities\\";
+        String curatedDataPath = dataPath + "learning_activities/";
 
         Utils.checkForDirectory(curatedDataPath);
 
@@ -38,7 +38,7 @@ public class Sitting {
         cleanForumSessions();
         writeForumSessions(curatedDataPath + "new_forum_sessions.csv");
 
-        readObservations(dataPath + "observations.csv");
+        readObservations(dataPath + "video_interaction.csv");
         cleanVideoSessions();
         writeVideoSessions(curatedDataPath + "new_video_sessions.csv");
 
@@ -72,13 +72,14 @@ public class Sitting {
         int duration, read = 0;
         String userId, start, end;
 
-        nextLine = csvReader.readNext();
+        //nextLine = csvReader.readNext();
 
         while ((nextLine = csvReader.readNext()) != null) {
             userId = nextLine[1];
-            start = nextLine[2];
-            end = nextLine[3];
-            duration = Integer.parseInt(nextLine[4]);
+            start = nextLine[3];
+            end = nextLine[4];
+            duration = Integer.parseInt(nextLine[5]);
+
 
             if(users.containsKey(userId)) {
 
@@ -100,7 +101,7 @@ public class Sitting {
         String session_id, userId, start, end;
         int duration, read = 0;
 
-        nextLine = csvReader.readNext();
+        //nextLine = csvReader.readNext();
 
         while ((nextLine = csvReader.readNext()) != null) {
             session_id = nextLine[0];
@@ -130,13 +131,13 @@ public class Sitting {
         int duration, read = 0;
         String userId, start, end;
 
-        nextLine = csvReader.readNext();
+        //nextLine = csvReader.readNext();
 
         while ((nextLine = csvReader.readNext()) != null) {
             userId = nextLine[1];
-            start = nextLine[3];
-            end = nextLine[4];
-            duration = Integer.parseInt(nextLine[5]);
+            start = nextLine[12];
+            end = nextLine[13];
+            duration = Integer.parseInt(nextLine[3]);
 
             if(users.containsKey(userId)) {
 

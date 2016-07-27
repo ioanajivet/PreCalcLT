@@ -17,7 +17,7 @@ public class Utils {
     }
 
     //This is for ST
-    private static int getWeekPrevious(String startTime) {
+    /*private static int getWeekPrevious(String startTime) {
         if(startTime.compareTo("2015-01-27") > 0 && startTime.compareTo("2015-02-03") < 0)
             return 1;
         if(startTime.compareTo("2015-02-03") > 0 && startTime.compareTo("2015-02-10") < 0)
@@ -39,9 +39,9 @@ public class Utils {
         if(startTime.compareTo("2015-03-31") > 0 && startTime.compareTo("2015-04-08") < 0)
             return 10;
         return 99;
-    }
+    }*/
 
-    /*private static int getWeekPrevious(String startTime) {
+    private static int getWeekPrevious(String startTime) {
         if(startTime.compareTo("2015-07-07") > 0 && startTime.compareTo("2015-07-14") < 0)
             return 1;
         if(startTime.compareTo("2015-07-14") > 0 && startTime.compareTo("2015-07-21") < 0)
@@ -67,34 +67,35 @@ public class Utils {
         if(startTime.compareTo("2015-09-22") > 0 && startTime.compareTo("2015-09-30") < 0)
             return 12;
         return 99;
-    }*/
+    }
 
     //todo: update with the current weeks
     //this is for ST
-    private static int getWeekCurrent(String startTime) {
-        if(startTime.compareTo("2015-01-27") > 0 && startTime.compareTo("2015-02-03") < 0)
+    private static int getWeekCurrentST(String startTime) {
+        if(startTime.compareTo("2016-04-12") > 0 && startTime.compareTo("2016-04-19") < 0)
             return 1;
-        if(startTime.compareTo("2015-02-03") > 0 && startTime.compareTo("2015-02-10") < 0)
+        if(startTime.compareTo("2016-04-19") > 0 && startTime.compareTo("2016-04-26") < 0)
             return 2;
-        if(startTime.compareTo("2015-02-10") > 0 && startTime.compareTo("2015-02-17") < 0)
+        if(startTime.compareTo("2016-04-26") > 0 && startTime.compareTo("2016-05-03") < 0)
             return 3;
-        if(startTime.compareTo("2015-02-17") > 0 && startTime.compareTo("2015-02-24") < 0)
+        if(startTime.compareTo("2016-05-03") > 0 && startTime.compareTo("2016-05-10") < 0)
             return 4;
-        if(startTime.compareTo("2015-02-24") > 0 && startTime.compareTo("2015-03-03") < 0)
+        if(startTime.compareTo("2016-05-10") > 0 && startTime.compareTo("2016-05-17") < 0)
             return 5;
-        if(startTime.compareTo("2015-03-03") > 0 && startTime.compareTo("2015-03-10") < 0)
+        if(startTime.compareTo("2016-05-17") > 0 && startTime.compareTo("2016-05-24") < 0)
             return 6;
-        if(startTime.compareTo("2015-03-10") > 0 && startTime.compareTo("2015-03-17") < 0)
+        if(startTime.compareTo("2016-05-24") > 0 && startTime.compareTo("2016-05-31") < 0)
             return 7;
-        if(startTime.compareTo("2015-03-17") > 0 && startTime.compareTo("2015-03-24") < 0)
+        if(startTime.compareTo("2016-05-31") > 0 && startTime.compareTo("2016-06-07") < 0)
             return 8;
-        if(startTime.compareTo("2015-03-24") > 0 && startTime.compareTo("2015-03-31") < 0)
+        if(startTime.compareTo("2016-06-07") > 0 && startTime.compareTo("2016-06-14") < 0)
             return 9;
-        if(startTime.compareTo("2015-03-31") > 0 && startTime.compareTo("2015-04-08") < 0)
+        if(startTime.compareTo("2016-06-14") > 0 && startTime.compareTo("2016-06-20") < 0)
             return 10;
         return 99;
     }
-    /*private static int getWeekCurrent(String startTime) {
+
+    private static int getWeekCurrent(String startTime) {
         if(startTime.compareTo("2016-06-21") > 0 && startTime.compareTo("2016-06-28") < 0)
             return 1;
         if(startTime.compareTo("2016-06-28") > 0 && startTime.compareTo("2016-07-05") < 0)
@@ -124,22 +125,22 @@ public class Utils {
         if(startTime.compareTo("2016-09-20") > 0 && startTime.compareTo("2016-09-30") < 0)
             return 14;
         return 99;
-    }*/
+    }
 
     //FOR ST
-    public static String getProblemDeadline(MetricComputation.Edition edition) {
+/*    public static String getProblemDeadline(MetricComputation.Edition edition) {
         if(edition == MetricComputation.Edition.CURRENT)
             return "2015-04-08 12:00:00";
         //todo: update to actual date if wee change the course we use!!!
         return "2015-04-08 12:00:00";
-    }
+    }*/
     //FOR PreCalc
-    /*public static String getProblemDeadline(MetricComputation.Edition edition) {
+    public static String getProblemDeadline(MetricComputation.Edition edition) {
         if(edition == MetricComputation.Edition.CURRENT)
             return "2016-09-29 23:30:00";
         //todo: update to actual date if wee change the course we use!!!
         return "2015-09-29 23:30:00";
-    }*/
+    }
 
     public static void checkForDirectory(String filepath) {
         File theDir = new File(filepath);
